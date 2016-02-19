@@ -1,0 +1,33 @@
+﻿extends layout
+
+block content
+  h2 #{title}
+  h3 #{message}
+  
+  h4
+    ul( id='msg' )
+
+  .footer.navbar-fixed-bottom
+    .row(style='background: rgba(80, 80, 190, \
+      0.8);')
+        .col-xs-10.col-md-10
+          input#tbox1(name='tbox1', style='background: \
+          none; border-width: 0px 0px 1px; border-style: none none solid; border-color: currentColor \
+          currentColor antiquewhite; margin: auto auto auto 10px; padding: 10px; outline: 0px; \
+          border-image: none; width: 90%; color: white; font-size: 1.5em; max-width: 900px;', type='text', value='Ping Me :)....')
+        .col-xs-2.col-md-2
+          input.btn.btn-default(name='box1', style='margin: 10px;', onclick='sendmsg()', type='button', value='Seng Msg')
+
+
+
+block scripts
+  script(src="/socket.io/socket.io.js")
+  
+  script.
+    var socket = io();
+    
+  script(src="/javascripts/try1.js")
+  
+  
+  
+        
